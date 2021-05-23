@@ -3,7 +3,8 @@ version: '3'
 services:
     mysql:
         build:
-            context: ./infra/docker/mysql
+            context: .
+            dockerfile: ./infra/docker/mysql/Dockerfile
         volumes:
             - db_data:/var/lib/mysql
         restart: always
