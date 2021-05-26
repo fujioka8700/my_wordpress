@@ -1,5 +1,11 @@
-# public ディレクトリ中の全ての、ファイルやディレクトリを無視
-/public/*
-
-# 特定のファイル(.gitkeep)だけ除外
+# public フォルダを残す
 !/public/.gitkeep
+
+# テーマフォルダと wp-config.php のみにする
+/public/*
+!/public/wp-config.php
+!/public/wp-content
+/public/wp-content/*
+!/public/wp-content/themes
+/public/wp-content/themes/*
+# !/public/wp-content/themes/管理するテーマ
