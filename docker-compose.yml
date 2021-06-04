@@ -13,6 +13,7 @@ services:
             MYSQL_DATABASE: ${DB_NAME:-wordpress}
             MYSQL_USER: ${DB_USER:-phper}
             MYSQL_PASSWORD: ${DB_PASS:-secret}
+        container_name: "wp_db_con"
 
     wordpress:
         image: wordpress:php7.4-apache
@@ -28,6 +29,7 @@ services:
             WORDPRESS_DB_HOST: mysql:3306
             WORDPRESS_DB_USER: ${DB_USER:-phper}
             WORDPRESS_DB_PASSWORD: ${DB_PASS:-secret}
+        container_name: "wp_web_con"
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -41,6 +43,7 @@ services:
             - mysql
         ports:
             - ${PHPMYADMIN_PORT:-1080}:80
+        container_name: phpmyadmin_con
 
 volumes:
     db_data:
